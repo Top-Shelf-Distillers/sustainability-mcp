@@ -58,7 +58,7 @@ export async function handleCreateTrendChart(
     return {
       content: [
         {
-          type: 'text',
+          type: 'text' as const,
           text: JSON.stringify(
             {
               error: `No data found for metric '${metric}' in years ${start_year}-${end_year}`,
@@ -158,11 +158,11 @@ export async function handleCreateTrendChart(
   return {
     content: [
       {
-        type: 'text',
+        type: 'text' as const,
         text: JSON.stringify(response, null, 2),
       },
       {
-        type: 'resource',
+        type: 'resource' as const,
         resource: {
           uri: `file://${chartPath}`,
           mimeType: 'text/html',
@@ -186,7 +186,7 @@ export async function handleCreateBreakdownChart(
     return {
       content: [
         {
-          type: 'text',
+          type: 'text' as const,
           text: JSON.stringify(
             {
               error: `No data found for year ${year} grouped by ${group_by}`,
@@ -307,11 +307,11 @@ export async function handleCreateBreakdownChart(
   return {
     content: [
       {
-        type: 'text',
+        type: 'text' as const,
         text: JSON.stringify(response, null, 2),
       },
       {
-        type: 'resource',
+        type: 'resource' as const,
         resource: {
           uri: `file://${chartPath}`,
           mimeType: 'text/html',

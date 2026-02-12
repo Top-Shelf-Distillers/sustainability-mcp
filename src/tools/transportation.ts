@@ -52,7 +52,7 @@ export async function handleGetTransportationBySupplier(
     return {
       content: [
         {
-          type: 'text',
+          type: 'text' as const,
           text: JSON.stringify(
             {
               error: `No transportation data found for supplier matching: ${supplier}`,
@@ -91,7 +91,7 @@ export async function handleGetTransportationBySupplier(
   return {
     content: [
       {
-        type: 'text',
+        type: 'text' as const,
         text: JSON.stringify(response, null, 2),
       },
     ],
@@ -121,7 +121,7 @@ export async function handleListSuppliers(
   return {
     content: [
       {
-        type: 'text',
+        type: 'text' as const,
         text: JSON.stringify(
           {
             total_suppliers: suppliers.length,

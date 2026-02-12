@@ -62,7 +62,7 @@ export async function handleGetEmissionsByYear(
   return {
     content: [
       {
-        type: 'text',
+        type: 'text' as const,
         text: JSON.stringify(response, null, 2),
       },
     ],
